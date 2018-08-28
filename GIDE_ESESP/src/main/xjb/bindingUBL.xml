@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" 
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+            xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance"
+            xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+            xmlns:annox="http://annox.dev.java.net"
+            version="2.1">
+
+  <jaxb:globalBindings typesafeEnumMaxMembers="2000">
+    <jaxb:serializable uid="123456789012" />
+    
+	<jaxb:javaType	name="java.util.Calendar"
+				xmlType="xs:dateTime"
+				parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
+				printMethod="javax.xml.bind.DatatypeConverter.printDateTime" />
+				
+    
+	<jaxb:javaType	name="java.util.Calendar"
+				xmlType="xs:date"
+				parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
+				printMethod="javax.xml.bind.DatatypeConverter.printDateTime" />
+				
+				
+    
+	<jaxb:javaType	name="java.util.Calendar"
+				xmlType="xs:time"
+				parseMethod="javax.xml.bind.DatatypeConverter.parseDateTime"
+				printMethod="javax.xml.bind.DatatypeConverter.printDateTime" />
+												
+				
+
+    
+  </jaxb:globalBindings>
+  
+    <!-- org.example.SomeRootType @XmlRootElement -->
+   <!--  <jaxb:bindings schemaLocation="../xsd/dian/DIAN_UBL.xsd" node="/xs:schema">
+    	<jaxb:bindings node="xs:complexType[@name='InvoiceType']">
+    		
+    	</jaxb:bindings>    	    	
+    </jaxb:bindings> -->
+   <!-- <bindings schemaLocation="../xsd/dian/DIAN_UBL.xsd" node="/xs:schema">
+  	<bindings node="xs:complexType[@name='InvoiceType']">
+  		<annox:annotate>
+             <annox:annotate annox:class="javax.xml.bind.annotation.XmlRootElement" name="Invoice"/>
+        </annox:annotate>
+  	</bindings>
+  </bindings> -->
+</jaxb:bindings>

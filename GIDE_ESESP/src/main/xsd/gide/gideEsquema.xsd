@@ -1,0 +1,2601 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.growupit.com/gideEsquema"
+	targetNamespace="http://www.growupit.com/gideEsquema"
+	elementFormDefault="qualified">
+
+	<element name="ArchivoElectronico" type="tns:ArchivoElectronicoTipo" />
+
+	<complexType name="ArchivoElectronicoTipo">
+		<sequence>
+			<element name="DatosDeControl" type="tns:TipoDatosDeControl"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--name="ext:UBLExtensions" -->
+			<element name="Extensiones" type="tns:TipoExtensiones"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--name="UBLVersionID" -->
+			<element name="IdVersion" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--name="CustomizationID" -->
+			<element name="IdPersonalizacion" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- name="ProfileID" -->
+			<element name="IdPerfil" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!-- name="ID" -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--name="UUID" -->
+			<element name="UUID" type="tns:TipoIdentificador" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--name="IssueDate" -->
+			<element name="FechaEmision" type="date" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--name="IssueTime" -->
+			<element name="HoraEmision" type="time" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--name="InvoiceTypeCode" -->
+			<element name="TipoCodigoFactura" type="tns:TipoCodigo"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--name="Note" -->
+			<element name="Nota" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--name="DocumentCurrencyCode" -->
+			<element name="CodigoMoneda" type="tns:TipoCodigo" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--AccountingCostCode -->
+			<element name="CodigoCentroDeCosto" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--name="AccountingCost" -->
+			<element name="CentroDeCosto" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--name="LineCountNumeric" -->
+			<element name="NumeroLineas" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--name="InvoicePeriod" -->
+			<element name="PeriodoFactura" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--name="cac:OrderReference" -->
+			<element name="ReferenciaPedido" type="tns:TipoReferenciaPedido"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--name="BillingReference" -->
+			<element name="ReferenciaFactura" type="tns:TipoReferenciaFactura"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--name="DespatchDocumentReference" -->
+			<element name="DocumentoReferenciaDespacho" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--name="ReceiptDocumentReference" -->
+			<element name="DocumentoRefernciaRecepcion" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--name="OriginatorDocumentReference" -->
+			<element name="DocumentoReferenciaCreador" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--name="ContractDocumentReference" -->
+			<element name="DocumentoReferenciaContrato" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--name="AdditionalDocumentReference" -->
+			<element name="DocumentoReferenciaAdicional" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!-- name="tns:AccountingSupplierParty" -->
+			<element name="TerceroProveedor" type="tns:TipoProveedor"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--name="tns:AccountingCustomerParty" -->
+			<element name="TerceroCliente" type="tns:TipoClienteTercero"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--name="PayeeParty" -->
+			<element name="TerceroBeneficiario" type="tns:TipoTercero"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--name="BuyerCustomerParty" -->
+			<element name="TerceroComprador" type="tns:TipoClienteTercero"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--name="SellerSupplierParty" Preguntar(AccountingSupplierParty) -->
+			<element name="TerceroProveedorVendedor" type="tns:TipoProveedor"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- name="TaxRepresentativeParty" -->
+			<element name="TerceroRepresentanteFiscal" type="tns:TipoTercero"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--name="tns:Delivery" -->
+			<element name="Entrega" type="tns:TipoEntrega" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--name="tns:DeliveryTerms" -->
+			<element name="TerminosEntrega" type="tns:TipoTerminosEntrega"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--name="PaymentMeans" -->
+			<element name="MedioPago" type="tns:TipoMedioPago" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--name="PaymentTerms" -->
+			<element name="TerminosPago" type="tns:TipoTerminosPago"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--name="tns:PrepaidPayment" -->
+			<element name="PagosAnticipados" type="tns:TipoPago"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--name="tns:AllowanceCharge" -->
+			<element name="Cargo" type="tns:TipoCargo" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--name="PaymentExchangeRate" -->
+			<element name="TasaCambioPago" type="tns:TipoTasaCambio"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--name="PaymentAlternativeExchangeRate" -->
+			<element name="TasaCambioAlternativoPago" type="tns:TipoTasaCambio"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--name="tns:TaxTotal" -->
+			<element name="TotalImpuestos" type="tns:TipoImpuestoTotal"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--name="tns:LegalMonetaryTotal" -->
+			<element name="Totales" type="tns:TipoTotalMonetarioLegal"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!-- InvoiceLine -->
+			<element name="DetalleFactura" type="tns:TipoDetalleFactura"
+				minOccurs="1" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!-- DatosDeControlTipo -->
+	<complexType name="TipoDatosDeControl">
+		<sequence>
+			<!-- Usuario para el loguin del servico -->
+			<element name="Usuario" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- Contrasena para el loguin del servicio -->
+			<element name="Contrasenia" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- Consecutivo del documento electronico -->
+			<element name="NumeroDocumentoElectronico" type="int" minOccurs="1" maxOccurs="1">
+			</element>
+			<!-- 1 Factura - 2 Nota Debito - 3 Nota Credito-->
+			<element name="TipoDocumentoElectronico" type="int" minOccurs="1" maxOccurs="1">
+			</element>
+			<!-- Factura de Venta -Factura de Contingencia - Factura de Exportacion -->
+			<element name="TipoFactura" type="int" minOccurs="1" maxOccurs="1">
+			</element>
+			<!-- Fecha cuando se crea la factura -->
+			<element name="FrechaFacturacion" type="dateTime" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--Parte alfanumerica que va antes del consecutivo, en el numero de la factura -->
+			<element name="Prefijo" type="string"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!-- UBLExtension - extension -->
+	<complexType name="TipoExtensiones">
+		<sequence>
+			<element name="Extension" type="tns:TipoExtension" minOccurs="1"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--UBLExtensionType -->
+	<complexType name="TipoExtension">
+		<sequence>
+			<!--cbc:ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ExtensionAgencyID -->
+			<element name="AgenciaExtensionId" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ExtensionAgencyName -->
+			<element name="NombreAgenciaExtension" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ExtensionVersionID -->
+			<element name="VersionExtensionId" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- ExtensionAgencyURI -->
+			<element name="AgenciaExtensionURI" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ExtensionURI -->
+			<element name="ExtensionURI" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ExtensionReasonCode -->
+			<element name="CodigoRazonExtension" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ExtensionReason -->
+			<element name="Extension" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ExtensionContent -->
+			<element name="ContenidoExtension" type="tns:TipoContenidoExtension"
+				minOccurs="1" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<complexType name="TipoContenidoExtension">
+		<sequence>
+			<any namespace="##any" minOccurs="0" maxOccurs="1"
+				processContents="skip">
+			</any>
+		</sequence>
+	</complexType>
+
+	<!-- OrderReference - TipoReferenciaPedido -->
+	<complexType name="TipoReferenciaPedido">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--SalesOrderID -->
+			<element name="IdOrdenesVenta" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--CopyIndicator -->
+			<element name="IndicadorCopia" type="boolean" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--UUID -->
+			<element name="UUID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--IssueDate -->
+			<element name="FechaAsunto" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--IssueTime -->
+			<element name="HoraAsunto" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--CustomerReference -->
+			<element name="ReferenciaCliente" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- -->
+			<element name="Documentoreferencia" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--BillingReferenceType - Referencia de Facturacion -->
+	<complexType name="TipoReferenciaFactura">
+		<sequence>
+			<!--InvoiceDocumentReference -->
+			<element name="ReferenciaDocumentoFactura" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--SelfBilledInvoiceDocumentReference -->
+			<element name="ReferenciaDocumentoFacturaAutoFacturada" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- CreditNoteDocumentReference -->
+			<element name="ReferenciaDocumentoNotaCredito" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- SelfBilledCreditNoteDocumentReference -->
+			<element name="ReferenciaDocumentoNotaCreditoFacturada" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--DebitNoteDocumentReference -->
+			<element name="ReferenciaDocumentoNotaDebito" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ReminderDocumentReference -->
+			<element name="RecordatorioDocumentonameerencia" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AdditionalDocumentReference -->
+			<element name="ReferenciaDocumentoAdicional" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--BillingReferenceLine -->
+			<element name="LineanameerenciaFacturacion" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--DocumentReferenceType - Documento de referencia -->
+	<complexType name="TipoDocumentoReferencia">
+		<sequence>
+			<!-- ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--CopyIndicator -->
+			<element name="CopiaIndicador" type="boolean" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--UUID -->
+			<element name="UUID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- IssueDate -->
+			<element name="FechaAsunto" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--DocumentTypeCode -->
+			<element name="TipoCodigoDocumento" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--DocumentType -->
+			<element name="TipoDocumento" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- XPath -->
+			<element name="XPath" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--Attachment -->
+			<element name="ArchivoAdjunto" type="tns:TipoArchivoAdjunto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--AttachmentType - TipoArchivoAdjunto -->
+	<complexType name="TipoArchivoAdjunto">
+		<sequence>
+			<!--EmbeddedDocumentBinaryObject -->
+			<element name="ObjetoBinario" type="tns:TipoObjetoBinario"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ExternalReference -->
+			<element name="ReferenciaExterna" type="tns:TipoExternalReference"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--BinaryObject - ObjetoBinario -->
+	<complexType name="TipoObjetoBinario">
+		<simpleContent>
+			<extension base="base64Binary">
+				<!--format -->
+				<attribute name="Formato" type="string" use="optional">
+				</attribute>
+				<!--mimeCode -->
+				<attribute name="mimeCode" type="string" use="required">
+				</attribute>
+				<!--encodingCode -->
+				<attribute name="CodigoCodigicado" type="normalizedString"
+					use="optional">
+				</attribute>
+				<!--characterSetCode -->
+				<attribute name="GrupoCaracteresCodigo" type="normalizedString"
+					use="optional">
+				</attribute>
+				<!--uri -->
+				<attribute name="uri" type="string" use="optional">
+				</attribute>
+				<!--filename -->
+				<attribute name="NombreArchivo" type="string" use="optional">
+				</attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<!--ExternalReferenceType - TipoExternalReference -->
+	<complexType name="TipoExternalReference">
+		<sequence>
+			<!--URI -->
+			<element name="URI" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--DocumentHash -->
+			<element name="DocumentoHash" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ExpiryDate -->
+			<element name="FechaCaducidad" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ExpiryTime -->
+			<element name="HoraCaducidad" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--SupplierPartyType - TipoProveedor -->
+	<complexType name="TipoProveedor">
+		<sequence>
+			<!--CustomerAssignedAccountID -->
+			<element name="CuentaAsignadaClienteID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AdditionalAccountID -->
+			<element name="CuentaAdicionalID" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!-- DataSendingCapability -->
+			<element name="CapacidadEnvioDatos" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--tns:Party -->
+			<element name="Tercero" type="tns:TipoTercero" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--DespatchContact -->
+			<element name="ContactoDespacho" type="tns:TipoContacto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AccountingContact -->
+			<element name="ContactoContable" type="tns:TipoContacto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--SellerContact -->
+			<element name="ContactoVendedor" type="tns:TipoContacto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--ContactType - TipoContacto -->
+	<complexType name="TipoContacto">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Telephone -->
+			<element name="Telefono" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Telefax -->
+			<element name="Fax" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ElectronicMail -->
+			<element name="CorreoElectronico" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Note -->
+			<element name="Nota" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--OtherCommunication -->
+			<element name="Comunicacion" type="tns:TipoComunicacion"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<!--CommunicationType -TipoComunicacion -->
+	<complexType name="TipoComunicacion">
+		<sequence>
+			<!--ChannelCode -->
+			<element name="CodigoCanal" type="tns:TipoCodigo" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Channel -->
+			<element name="Canal" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- Value -->
+			<element name="Valor" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--PartyType - Tercero -->
+	<complexType name="TipoTercero">
+		<sequence>
+			<!--MarkCareIndicator -->
+			<element name="IndicadorMarcaCuidado" type="boolean"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--MarkAttentionIndicator -->
+			<element name="IndicadorMarcaAtencion" type="boolean"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- WebsiteURI -->
+			<element name="SitioWebURI" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- LogoReferenceID -->
+			<element name="ReferenciaLogotipoID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- EndpointID -->
+			<element name="PuntoFinalID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- PartyIdentification -->
+			<element name="IdentificacionTercero" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="unbounded">
+			</element>
+			<!--PartyName -->
+			<element name="NombreTercero" type="string" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--Language -->
+			<element name="Idioma" type="tns:TipoIdioma" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--PostalAddress -->
+			<element name="DireccionPostal" type="tns:TipoDireccion"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- PhysicalLocation -->
+			<element name="Ubicacion" type="tns:TipoUbicacion" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- PartyTaxScheme -->
+			<element name="EsquemaImpuestosTercero" type="tns:TipoEsquemaImpuestosTercero"
+				minOccurs="1" maxOccurs="unbounded">
+			</element>
+			<!--PartyLegalEntity -->
+			<element name="EntidadLegalTercero" type="tns:TipoEntidadLegalTercero"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--Contact -->
+			<element name="Contacto" type="tns:TipoContacto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Person -->
+			<element name="Persona" type="tns:TipoPersona" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--AgentParty -->
+			<element name="TerceroAgencia" type="tns:TipoTercero"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--LanguageType - TipoIdioma -->
+	<complexType name="TipoIdioma">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- LocaleCode -->
+			<element name="CodigoLocal" type="tns:TipoCodigo" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--LocationType - TipoUbicacion -->
+	<complexType name="TipoUbicacion">
+		<sequence>
+			<!-- ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- Description -->
+			<element name="Description" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Conditions -->
+			<element name="Condiciones" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--CountrySubentity -->
+			<element name="SubentidadPais" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--CountrySubentityCode -->
+			<element name="CodigoSubentidadPais" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ValidityPeriod -->
+			<element name="PeriodoValidez" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--tns:Address -->
+			<element name="Direccion" type="tns:TipoDireccion" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--AddressType - TipoDireccion -->
+	<complexType name="TipoDireccion">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--AddressTypeCode -->
+			<element name="TipoCodigoDireccion" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AddressFormatCode -->
+			<element name="FormatoCodigoDireccion" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Postbox -->
+			<element name="Buzon" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- Floor -->
+			<element name="Piso" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Room -->
+			<element name="Cuarto" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- StreetName -->
+			<element name="NombreCalle" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--AdditionalStreetName -->
+			<element name="NombreCalleAdicional" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--BlockName -->
+			<element name="NombreBloque" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--BuildingName -->
+			<element name="NombreEdificio" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--BuildingNumber -->
+			<element name="NumeroEdificio" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--InhouseMail -->
+			<element name="CorreoInterno" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Department -->
+			<element name="Departamento" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--MarkAttention -->
+			<element name="MarcaAtencion" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--MarkCare -->
+			<element name="MarcaCuidado" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--PlotIdentification -->
+			<element name="IdentificacionParcela" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--CitySubdivisionName -->
+			<element name="NombreSubdivisionCiudad" type="string"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--CityName -->
+			<element name="NombreCiudad" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--PostalZone -->
+			<element name="ZonaPostal" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--CountrySubentity -->
+			<element name="SubentidadPais" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--CountrySubentityCode -->
+			<element name="CodigoSubentidadesPais" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Region -->
+			<element name="Region" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--District -->
+			<element name="Distrito" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--TimezoneOffset -->
+			<element name="ZonaHorariaOffset" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AddressLine -->
+			<element name="LineaDireccion" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--Country -->
+			<element name="Pais" type="tns:TipoPais" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- LocationCoordinate -->
+			<element name="CoordenadasUbicacion" type="tns:TipoCoordenadasUbicacion"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--CountryType - TipoPais -->
+	<complexType name="TipoPais">
+		<sequence>
+			<!--IdentificationCode -->
+			<element name="CodigoIdentificacion" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--LocationCoordinateType - TipoCoordenadasUbicacion -->
+	<complexType name="TipoCoordenadasUbicacion">
+		<sequence>
+			<!--CoordinateSystemCode -->
+			<element name="CodigoSistemaCoordenadas" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--LatitudeDegreesMeasure -->
+			<element name="MedidaGradosLatitud" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- LatitudeMinutesMeasure -->
+			<element name="MedidaMinutosLatitud" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--LatitudeDirectionCode -->
+			<element name="CodigoDireccionLatitud" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--LongitudeDegreesMeasure -->
+			<element name="MedidaLongitudGrados" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--LongitudeMinutesMeasure -->
+			<element name="MedidaLongitudMinutos" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--LongitudeDirectionCode -->
+			<element name="CodigoLongitudDireccion" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--PartyTaxSchemeType - EsquemaImpuestosTerceroType -->
+	<complexType name="TipoEsquemaImpuestosTercero">
+		<sequence>
+			<!--cbc:RegistrationName -->
+			<element name="NombreRegistro" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:CompanyID -->
+			<element name="IDEmpresa" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:TaxLevelCode -->
+			<element name="CodigoNivelImpuestos" type="tns:TipoCodigo"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--cbc:ExemptionReasonCode -->
+			<element name="CodigoRazonExencion" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:ExemptionReason -->
+			<element name="RazonExencion" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--RegistrationAddress -->
+			<element name="DireccionRegistro" type="tns:TipoDireccion"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- -->
+			<element name="EsquemaImpuestos" type="tns:TipoRegimenTriburario"
+				minOccurs="1" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--PartyLegalEntityType - TipoEntidadLegalTercero -->
+	<complexType name="TipoEntidadLegalTercero">
+		<sequence>
+			<!-- cbc:RegistrationName -->
+			<element name="NombreRegistro" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:CompanyID -->
+			<element name="IDEmpresa" type="boolean" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--RegistrationAddress -->
+			<element name="DireccionRegistro" type="tns:TipoDireccion"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- CorporateRegistrationScheme -->
+			<element name="EsquemaRegistroCorporativo" type="tns:TipoEsquemaRegistroCorporativo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--CorporateRegistrationSchemeType - TipoEsquemaRegistroCorporativo -->
+	<complexType name="TipoEsquemaRegistroCorporativo">
+		<sequence>
+			<!-- cbc:ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:CorporateRegistrationTypeCode -->
+			<element name="TipoCodigoRegistroCorporativo" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- JurisdictionRegionAddress -->
+			<element name="DireccionRegionJurisdiccion" type="tns:TipoDireccion"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<!--PersonType - TipoPersona -->
+	<complexType name="TipoPersona">
+		<sequence>
+			<!--cbc:FirstName -->
+			<element name="PrimerNombre" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:FamilyName -->
+			<element name="Apellido" type="string" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:Title -->
+			<element name="Titulo" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:MiddleName -->
+			<element name="SegundoNombre" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:NameSuffix -->
+			<element name="SufijoNombre" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:JobTitle -->
+			<element name="TituloProfesional" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:OrganizationDepartment -->
+			<element name="DepartamentoOrganizacion" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--CustomerPartyType - Cliente Tercero -->
+	<complexType name="TipoClienteTercero">
+		<sequence>
+			<!-- CustomerAssignedAccountID -->
+			<element name="CuentaAsignadaClienteID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--SupplierAssignedAccountID -->
+			<element name="CuentaAsignadaProveedorID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AdditionalAccountID -->
+			<element name="CuentaAdicionalID" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--tns:Party -->
+			<element name="Tercero" type="tns:TipoTercero" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--DeliveryContact -->
+			<element name="ContactoEntrega" type="tns:TipoContacto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AccountingContact -->
+			<element name="ContactoContable" type="tns:TipoContacto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--BuyerContact -->
+			<element name="ContactoComprador" type="tns:TipoContacto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	
+
+
+	<!--DeliveryType - TipoEntrega -->
+	<complexType name="TipoEntrega">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Quantity -->
+			<element name="Cantidad" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--MinimumQuantity -->
+			<element name="CantidadMinima" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--MaximumQuantity -->
+			<element name="CantidadMaxima" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ActualDeliveryDate -->
+			<element name="FechaActualEntrega" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ActualDeliveryTime -->
+			<element name="HoraActualEntrega" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--LatestDeliveryDate -->
+			<element name="FechaUltimaEntrega" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--LatestDeliveryTime -->
+			<element name="HoraUltimaEntrega" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- TrackingID -->
+			<element name="IDSeguimiento" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- DeliveryAddress -->
+			<element name="DireccionEntrega" type="tns:TipoDireccion"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--DeliveryLocation -->
+			<element name="UbicacionEntrega" type="tns:TipoUbicacion"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--RequestedDeliveryPeriod -->
+			<element name="PlazoEntregaSolicitado" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--PromisedDeliveryPeriod -->
+			<element name="PlazoEntregaPrometido" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--EstimatedDeliveryPeriod -->
+			<element name="PlazoEntregaEstimado" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--DeliveryParty -->
+			<element name="EntregaTercero" type="tns:TipoTercero"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Despatch -->
+			<element name="Envio" type="tns:TipoEnvio" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--DespatchType - TipoEnvio -->
+	<complexType name="TipoEnvio">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--RequestedDespatchDate -->
+			<element name="FechaEnvioSolicitado" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--RequestedDespatchTime -->
+			<element name="HoraEnvioSolicitado" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--EstimatedDespatchDate -->
+			<element name="FechaEstimadaEnvio" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- EstimatedDespatchTime -->
+			<element name="HoraEstimadaEnvio" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ActualDespatchDate -->
+			<element name="FechaActualEnvio" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ActualDespatchTime -->
+			<element name="HoraActualEnvio" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--DespatchAddress -->
+			<element name="Direccion" type="tns:TipoDireccion" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--tns:DespatchParty -->
+			<element name="Tercero" type="tns:TipoTercero" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- Contact -->
+			<element name="Contacto" type="tns:TipoContacto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--DeliveryTermsType - Terminos de la Entrega -->
+	<complexType name="TipoTerminosEntrega">
+		<sequence>
+			<!-- ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--SpecialTerms -->
+			<element name="TerminosEspeciales" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--LossRiskResponsibilityCode -->
+			<element name="CodigoResponsableRiesgoPerdida" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--LossRisk -->
+			<element name="RiesgoPerdida" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--DeliveryLocation -->
+			<element name="UbicacionEntrega" type="tns:TipoUbicacion"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AllowanceCharge -->
+			<element name="Cargo" type="tns:TipoCargo" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<!--PaymentMeansType - Medios de Pago -->
+	<complexType name="TipoMedioPago">
+		<sequence>
+			<!--ID -->
+			<element name="Id" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--PaymentMeansCode -->
+			<element name="CodigoMedioPago" type="tns:TipoCodigo"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!-- PaymentDueDate -->
+			<element name="FechaVencimientoPago" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--PaymentChannelCode -->
+			<element name="CodigoCanalPago" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--InstructionID -->
+			<element name="OrdenID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--InstructionNote -->
+			<element name="NotaOrden" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!-- PaymentID -->
+			<element name="IDPago" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--CardAccount -->
+			<element name="CuentaTarjeta" type="tns:TipoCuentaTarjeta"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- PayerFinancialAccount -->
+			<element name="CuentaContribuyenteFinanciero" type="tns:TipoCuentaFinanciera"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- PayeeFinancialAccount -->
+			<element name="CuentaContribuyenteBeneficiario" type="tns:TipoCuentaFinanciera"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- -->
+			<element name="CuentaCredito" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!-- CardAccountType - TipoCuentaTarjeta -->
+	<complexType name="TipoCuentaTarjeta">
+		<sequence>
+			<!--PrimaryAccountNumberID -->
+			<element name="NumeroCuentaPrincipalID" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--NetworkID -->
+			<element name="RedID" type="tns:TipoIdentificador" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- CardTypeCode -->
+			<element name="TipoCodigoTarjeta" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- ValidityStartDate -->
+			<element name="FechaInicialValidez" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- ExpiryDate -->
+			<element name="FechaCaducidad" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- IssuerID -->
+			<element name="EmisorID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- IssueNumberID -->
+			<element name="NumeroEmisorID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--CV2ID -->
+			<element name="CV2ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- CardChipCode -->
+			<element name="CodigoChipTarjeta" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- ChipApplicationID -->
+			<element name="ChipAplicacionID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- HolderName -->
+			<element name="NombreTitular" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--FinancialAccountType - TipoCuentaFinanciera -->
+	<complexType name="TipoCuentaFinanciera">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AccountTypeCode -->
+			<element name="TipoCodigoCuenta" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--CurrencyCode -->
+			<element name="CodigoMoneda" type="tns:TipoCodigo" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--PaymentNote -->
+			<element name="NotaPago" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--FinancialInstitutionBranch -->
+			<element name="SucursualInstitucionFinanciera" type="tns:TipoSucursal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Country -->
+			<element name="Pais" type="tns:TipoPais" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--BranchType - TipoSucursal -->
+	<complexType name="TipoSucursal">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--FinancialInstitution -->
+			<element name="InstitucionFinanciera" type="tns:TipoInstitucionFinanciera"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Address -->
+			<element name="Direccion" type="tns:TipoDireccion" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--FinancialInstitutionType - TipoInstitucionFinanciera -->
+	<complexType name="TipoInstitucionFinanciera">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Address -->
+			<element name="Direccion" type="tns:TipoDireccion" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<!-- PaymentTermsType - Terminos de Pago -->
+	<complexType name="TipoTerminosPago">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- PaymentMeansID -->
+			<element name="IDMedioPago" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--PrepaidPaymentReferenceID -->
+			<element name="IDReferenciaPagoPrepago" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- Note -->
+			<element name="Nota" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--ReferenceEventCode -->
+			<element name="CodigoReferenciaEvento" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--SettlementDiscountPercent -->
+			<element name="PorcentajeDescuentoLiquidacion" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--PenaltySurchargePercent -->
+			<element name="PorcentajeRecargoPenal" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- Amount -->
+			<element name="Monto" type="decimal" minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- SettlementPeriod -->
+			<element name="PeriodoLiquidacion" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- PenaltyPeriod -->
+			<element name="PeriodoPenalizacion" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--PaymentType - Pago -->
+	<complexType name="TipoPago">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- PaidAmount -->
+			<element name="MontoPagado" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- ReceivedDate -->
+			<element name="FechaRecibido" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- PaidDate -->
+			<element name="FechaPago" type="date" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--PaidTime -->
+			<element name="HoraPago" type="time" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--InstructionID -->
+			<element name="OrdenID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--AllowanceChargeType - Cargo -->
+	<complexType name="TipoCargo">
+		<sequence>
+			<!-- ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ChargeIndicator -->
+			<element name="IndicadorCarga" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--AllowanceChargeReasonCode -->
+			<element name="CodigoRazonAsignacionCargo" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AllowanceChargeReason -->
+			<element name="RazonAsignacionCargo" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--MultiplierFactorNumeric -->
+			<element name="FactorNumericoMultiplicador" type="decimal"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--PrepaidIndicator -->
+			<element name="IndicadorPagoAdelantado" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--SequenceNumeric -->
+			<element name="SecuenciaNumerica" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Amount -->
+			<element name="Monto" type="decimal" minOccurs="1" maxOccurs="1">
+			</element>
+			<!--BaseAmount -->
+			<element name="MontoBase" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--AccountingCostCode -->
+			<element name="CodigoCostoContable" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AccountingCost -->
+			<element name="CostoContable" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--TaxCategory -->
+			<element name="CategoriaImpuesto" type="tns:TipoCategoriaImpuesto"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--TaxTotal -->
+			<element name="ImpuestoTotal" type="tns:TipoImpuestoTotal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--PaymentMeans -->
+			<element name="MedioPago" type="tns:TipoMedioPago" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--TaxCategoryType - TipoCategoriaImpuesto -->
+	<complexType name="TipoCategoriaImpuesto">
+		<sequence>
+			<!--ID -->
+			<element name="Id" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Percent -->
+			<element name="Porcentaje" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--BaseUnitMeasure -->
+			<element name="MedidaUnidadBase" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--PerUnitAmount -->
+			<element name="MontoPorUnidad" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--TaxExemptionReasonCode -->
+			<element name="CodigoExencionImpuestos" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--TaxExemptionReason -->
+			<element name="RazonExencionImpuestos" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--TierRange -->
+			<element name="RangoNivel" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--TierRatePercent -->
+			<element name="PorcentajeRangoNivel" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--TaxScheme -->
+			<element name="RegimenTriburario" type="tns:TipoRegimenTriburario"
+				minOccurs="1" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--TaxSchemeType - TipoRegimenTriburario -->
+	<complexType name="TipoRegimenTriburario">
+		<sequence>
+			<!-- ID -->
+			<element name="Id" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--TaxTypeCode -->
+			<element name="TipoCodigoImpuesto" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--CurrencyCode -->
+			<element name="CodigoDivisa" type="tns:TipoCodigo" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--JurisdictionRegionAddress -->
+			<element name="DireccionJurisdiccionRegional" type="tns:TipoDireccion"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<!--ExchangeRateType - Tasa de Cambio -->
+	<complexType name="TipoTasaCambio">
+		<sequence>
+			<!--SourceCurrencyCode -->
+			<element name="CodigoMoneda" type="tns:TipoCodigo" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--SourceCurrencyBaseRate -->
+			<element name="TasaBaseModena" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--TargetCurrencyCode -->
+			<element name="CodigoMoneda" type="tns:TipoCodigo" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--TargetCurrencyBaseRate -->
+			<element name="TasaBaseMoneda" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ExchangeMarketID -->
+			<element name="IDIntercambioMercado" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- CalculationRate -->
+			<element name="TasaCalculada" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--MathematicOperatorCode -->
+			<element name="CodigoOperadorMatematico" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--Date -->
+			<element name="Fecha" type="date" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ForeignExchangeContract -->
+			<element name="ContratoMonedaExtranjera" type="tns:TipoContrato"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--ContractType - TipoContrato -->
+	<complexType name="TipoContrato">
+		<sequence>
+			<!--ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- IssueDate -->
+			<element name="FechaEmision" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--IssueTime -->
+			<element name="HoraEmision" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--ContractTypeCode -->
+			<element name="TipoCodigoContrato" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- ContractType -->
+			<element name="TipoContrato" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- ValidityPeriod -->
+			<element name="PeriodoValidez" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ContractDocumentReference -->
+			<element name="CocumentoReferenciaContrato" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--TaxTotalType - TipoImpuestoTotal -->
+	<complexType name="TipoImpuestoTotal">
+		<sequence>
+			<!--cbc:TaxAmount -->
+			<element name="MontoImpuesto" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:RoundingAmount -->
+			<element name="MontoRedondeado" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:TaxEvidenceIndicator -->
+			<element name="IndicadorEvidenciaImpuesto" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--tns:TaxSubtotal -->
+			<element name="SubtotalImpuesto" type="tns:TipoSubtotalImpuesto"
+				minOccurs="1" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--TaxSubtotalType - TipoSubtotalImpuesto -->
+	<complexType name="TipoSubtotalImpuesto">
+		<sequence>
+			<!--cbc:TaxableAmount -->
+			<element name="MontoGravable" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:TaxAmount -->
+			<element name="MontoImpuesto" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:CalculationSequenceNumeric -->
+			<element name="CalculoSecuenciaNumerica" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:TransactionCurrencyTaxAmount -->
+			<element name="MontoImpuestoMonedaTransaccion" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:Percent -->
+			<element name="Porcentaje" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:BaseUnitMeasure -->
+			<element name="BaseUnidadMedida" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:PerUnitAmount -->
+			<element name="MontoPorUnidad" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:TierRange -->
+			<element name="NivelRango" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:TierRatePercent -->
+			<element name="PorcentajeNivelRango" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:TaxCategory -->
+			<element name="ImpuestoCategoria" type="tns:TipoImpuestoCategoria"
+				minOccurs="1" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--TaxCategoryType - TipoImpuestoCategoria -->
+	<complexType name="TipoImpuestoCategoria">
+		<sequence>
+			<!-- ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- Percent -->
+			<element name="Porcentaje" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- BaseUnitMeasure -->
+			<element name="BaseUnidadMedida" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- PerUnitAmount -->
+			<element name="MontoPorUnidad" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--TaxExemptionReasonCode -->
+			<element name="CodigoExencionImpuestos" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--TaxExemptionReason -->
+			<element name="RazonExencionImpuestos" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--TierRange -->
+			<element name="NivelRango" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- TierRatePercent -->
+			<element name="PorcentajeNivelRango" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--TaxScheme -->
+			<element name="RegimenTriburario" type="tns:TipoRegimenTriburario"
+				minOccurs="1" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--MonetaryTotalType - Total Monetario Legal -->
+	<complexType name="TipoTotalMonetarioLegal">
+		<sequence>
+			<!--cbc:LineExtensionAmount -->
+			<element name="MontoExtensionLinea" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:TaxExclusiveAmount -->
+			<element name="MontoExclusivoImpuesto" type="decimal"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--cbc:TaxInclusiveAmount -->
+			<element name="MontoIncluyendoImpuesto" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:AllowanceTotalAmount -->
+			<element name="MontoTotalPermitido" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:ChargeTotalAmount -->
+			<element name="MontoTotalCargado" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:PrepaidAmount -->
+			<element name="MontoPagadoPorAdelantado" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:PayableRoundingAmount -->
+			<element name="MontoRedondeadoPagado" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:PayableAmount -->
+			<element name="MontoPagado" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--InvoiceLineType - Detalle de Factura -->
+	<complexType name="TipoDetalleFactura">
+		<sequence>
+			<!--cbc:ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:UUID -->
+			<element name="UUID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:Note -->
+			<element name="Nota" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:InvoicedQuantity -->
+			<element name="CantidadFactura" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:LineExtensionAmount -->
+			<element name="MontoLineaExtension" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:TaxPointDate -->
+			<element name="FechaImpuesto" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:AccountingCostCode -->
+			<element name="CodigoCosteContable" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:AccountingCost -->
+			<element name="CostoContable" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:FreeOfChargeIndicator -->
+			<element name="IndicadorSinCargo" type="boolean" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cac:OrderLineReference -->
+			<element name="ReferenciaLineaPedido" type="tns:TipoReferenciaLineaPedido"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:DespatchLineReference -->
+			<element name="LineaReferenciaEnvio" type="tns:TipoLineaReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:ReceiptLineReference -->
+			<element name="ReferenciaLineaRecepcion" type="tns:TipoLineaReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:BillingReference -->
+			<element name="ReferenciaFactura" type="tns:TipoReferenciaFactura"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:DocumentReference -->
+			<element name="ReferenciaDocumento" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:PricingReference -->
+			<element name="ReferenciaPrecios" type="tns:TipoReferenciaPrecios"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:OriginatorParty -->
+			<element name="PartidoOriginador" type="tns:TipoTercero"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:Delivery -->
+			<element name="Entrega" type="tns:TipoEntrega" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--cac:PaymentTerms -->
+			<element name="CondicionesPago" type="tns:TipoTerminosPago"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:AllowanceCharge -->
+			<element name="Cargo" type="tns:TipoCargo" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--cac:TaxTotal -->
+			<element name="ImpuestoTotal" type="tns:TipoImpuestoTotal"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!-- tns:Item -->
+			<element name="Articulo" type="tns:TipoArticulo" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- tns:Price -->
+			<element name="Precio" type="tns:TipoPrecio" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cac:DeliveryTerms -->
+			<element name="TerminosEntrega" type="tns:TipoTerminosEntrega"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--PriceType - PrecioType -->
+	<complexType name="TipoPrecio">
+		<sequence>
+			<!--cbc:PriceAmount -->
+			<element name="PrecioMonto" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:BaseQuantity -->
+			<element name="CantidadBase" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:PriceChangeReason -->
+			<element name="RazonCambioPreio" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cbc:PriceTypeCode -->
+			<element name="TipoCodigoPrecio" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:PriceType -->
+			<element name="TipoPrecio" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:OrderableUnitFactorRate -->
+			<element name="PrecioFactorUnidad" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cac:ValidityPeriod -->
+			<element name="PeriodoValidez" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!-- cac:PriceList -->
+			<element name="ListaPrecios" type="tns:TipoListaPrecios"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:AllowanceCharge -->
+			<element name="Cargo" type="tns:TipoCargo" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!-- PriceListType - ListaPreciosType -->
+	<complexType name="TipoListaPrecios">
+		<sequence>
+			<!-- cbc:ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:StatusCode -->
+			<element name="CodigoEstado" type="tns:TipoCodigo" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- ValidityPeriod -->
+			<element name="PeridoValidez" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--PreviousPriceList -->
+			<element name="ListaPreciosPrevia" type="tns:TipoListaPrecios"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--ItemType - TipoArticulo -->
+	<complexType name="TipoArticulo">
+		<sequence>
+			<!--cbc:Description -->
+			<element name="Descripcion" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--cbc:PackQuantity -->
+			<element name="CantidadPaquete" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:PackSizeNumeric -->
+			<element name="TamanoNumericoPaquete" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:CatalogueIndicator -->
+			<element name="IndicadorCatalogo" type="boolean" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:HazardousRiskIndicator -->
+			<element name="IndicadorRiesgo" type="boolean" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:AdditionalInformation -->
+			<element name="InformacionAdicional" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:Keyword -->
+			<element name="PalabraClave" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--cbc:BrandName -->
+			<element name="Marca" type="string" minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cbc:ModelName -->
+			<element name="NombreModelo" type="string" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!--cac:BuyersItemIdentification -->
+			<element name="IdentificacionArticulosCompradores" type="tns:TipoIdentificacionArticulos"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:SellersItemIdentification -->
+			<element name="IdentificacionArticuloVendedores" type="tns:TipoIdentificacionArticulos"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:ManufacturersItemIdentification -->
+			<element name="IdentificacionArticuloFabricante" type="tns:TipoIdentificacionArticulos"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:StandardItemIdentification -->
+			<element name="IdentificacionArticuloEstandar" type="tns:TipoIdentificacionArticulos"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:CatalogueItemIdentification -->
+			<element name="IdentificacionArticuloCatalogo" type="tns:TipoIdentificacionArticulos"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:AdditionalItemIdentification -->
+			<element name="IdentificacionArticuloAdicional" type="tns:TipoIdentificacionArticulos"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:CatalogueDocumentReference -->
+			<element name="DocumentoRefereciaCatalogo" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:ItemSpecificationDocumentReference -->
+			<element name="ReferenciaDocumentoEspecificacionArticulo"
+				type="tns:TipoDocumentoReferencia" minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:OriginCountry -->
+			<element name="PaisOrigen" type="tns:TipoPais" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cac:CommodityClassification -->
+			<element name="ClasificacionMercancia" type="tns:TipoClasificacionMercancia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:TransactionConditions -->
+			<element name="CondicionesTransaccion" type="tns:TipoCondicionesTransaccion"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:HazardousItem -->
+			<element name="ArticuloPeligroso" type="tns:TipoArticuloPeligroso"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:ClassifiedTaxCategory -->
+			<element name="CategoriaImpuestoClasificado" type="tns:TipoCategoriaImpuesto"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:AdditionalItemProperty -->
+			<element name="PropiedadArticuloAdicional" type="tns:TipoPropiedadArticulo"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:ManufacturerParty -->
+			<element name="TerceroFabricante" type="tns:TipoTercero"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:InformationContentProviderParty -->
+			<element name="TerceroProveedorContenidoInformacion" type="tns:TipoTercero"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cac:OriginAddress -->
+			<element name="DireccionOriginal" type="tns:TipoDireccion"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--cac:ItemInstance -->
+			<element name="InstanciaArticulo" type="tns:TipoInstanciaArticulo"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--ItemInstanceType - TipoInstanciaArticulo -->
+	<complexType name="TipoInstanciaArticulo">
+		<sequence>
+			<!--cbc:ProductTraceID -->
+			<element name="RastroProductoID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:ManufactureDate -->
+			<element name="FechaFabricacion" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:ManufactureTime -->
+			<element name="HoraFacturacion" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:RegistrationID -->
+			<element name="IDRegistro" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:SerieID -->
+			<element name="IDSerie" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AdditionalItemProperty -->
+			<element name="PropiedadAdicionalArticulo" type="tns:TipoPropiedadArticulo"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!-- LotIdentification -->
+			<element name="IdentificacionLote" type="tns:TipoIdentificacionLote"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--LotIdentificationType - TipoIdentificacionLote -->
+	<complexType name="TipoIdentificacionLote">
+		<sequence>
+			<!-- cbc:LotNumberID -->
+			<element name="IDNumeroLote" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:ExpiryDate -->
+			<element name="FechaVencimiento" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- AdditionalItemProperty -->
+			<element name="PropiedadAdicionalArticulo" type="tns:TipoPropiedadArticulo"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--ItemPropertyType - PropiedadArticuloType -->
+	<complexType name="TipoPropiedadArticulo">
+		<sequence>
+			<!--cbc:Name -->
+			<element name="Nombre" type="string" minOccurs="1" maxOccurs="1">
+			</element>
+			<!--cbc:Value -->
+			<element name="Valor" type="tns:TipoTexto" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--UsabilityPeriod -->
+			<element name="PeriodoUsabilidad" type="tns:TipoPeriodo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--ItemPropertyGroup -->
+			<element name="GrupoPropiedadesArticulo" type="tns:TipoGrupoPropiedadesArticulo"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--ItemPropertyGroupType - GrupoPropiedadesArticuloType -->
+	<complexType name="TipoGrupoPropiedadesArticulo">
+		<sequence>
+			<!-- cbc:ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:Name -->
+			<element name="Nombre" type="string" minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--HazardousItemType - ArticuloPeligrosoType -->
+	<complexType name="TipoArticuloPeligroso">
+		<sequence>
+			<!--cbc:ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:PlacardNotation -->
+			<element name="NotaCartel" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:PlacardEndorsement -->
+			<element name="AprobacionCartel" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:AdditionalInformation -->
+			<element name="InformacionAdicional" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:UNDGCode -->
+			<element name="CodigoUNDG" type="tns:TipoCodigo" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:EmergencyProceduresCode -->
+			<element name="CodigoProcedimientosEmergencia" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:MedicalFirstAidGuideCode -->
+			<element name="CodigoGuiaPrimerosAuxiliosMedico" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:TechnicalName -->
+			<element name="NombreTecnico" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:CategoryName -->
+			<element name="NombreCategoria" type="string" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:HazardousCategoryCode -->
+			<element name="CodigoCategoriaRiesgo" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:UpperOrangeHazardPlacardID -->
+			<element name="IDCartelRiesgoSuperiorNaranja" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:LowerOrangeHazardPlacardID -->
+			<element name="CartelRiesgoInferiorNaranjaID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:MarkingID -->
+			<element name="MarcaID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:HazardClassID -->
+			<element name="ClaseRiesgoID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:NetWeightMeasure -->
+			<element name="MedidaNetaPeso" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:NetVolumeMeasure -->
+			<element name="MedidaNetaVolumen" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:Quantity -->
+			<element name="Cantidad" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- ContactParty -->
+			<element name="ContactoTercero" type="tns:TipoTercero"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--SecondaryHazard -->
+			<element name="RiesgoSecundario" type="tns:TipoRiesgoSecundario"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!-- HazardousGoodsTransit -->
+			<element name="TransitoBienesArriesgado" type="tns:TipoTransitoBienArriesgado"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--EmergencyTemperature -->
+			<element name="TemperaturaEmergencia" type="tns:TipoTemperatura"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- FlashpointTemperature -->
+			<element name="TemperaturaPuntoCritico" type="tns:TipoTemperatura"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AdditionalTemperature -->
+			<element name="TemperaturaAdicional" type="tns:TipoTemperatura"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--HazardousGoodsTransitType - TipoTransitoBienArriesgado -->
+	<complexType name="TipoTransitoBienArriesgado">
+		<sequence>
+			<!-- cbc:TransportEmergencyCardCode -->
+			<element name="TransporteCodigoTarjetaEmergencia" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:PackingCriteriaCode -->
+			<element name="CodigoCriterioPaquete" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:HazardousRegulationCode -->
+			<element name="CodigoRegularionArriesgado" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:InhalationToxicityZoneCode -->
+			<element name="CodigoZonaToxicaInhalacion" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:TransportAuthorizationCode -->
+			<element name="CodigoAutorizacionTransporte" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- MaximumTemperature -->
+			<element name="TemperaturaMaxima" type="tns:TipoTemperatura"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- MinimumTemperature -->
+			<element name="TemperaturaMinima" type="tns:TipoTemperatura"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--TemperatureType - TemperaturaType -->
+	<complexType name="TipoTemperatura">
+		<sequence>
+			<!-- cbc:AttributeID -->
+			<element name="IDAtributo" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!-- cbc:Measure -->
+			<element name="Medida" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:Description -->
+			<element name="Descripcion" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<!--SecondaryHazardType - RiesgoSecundarioType -->
+	<complexType name="TipoRiesgoSecundario">
+		<sequence>
+			<!--cbc:ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:PlacardNotation -->
+			<element name="NotaCartel" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:PlacardEndorsement -->
+			<element name="AprobacionCartel" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:EmergencyProceduresCode -->
+			<element name="CodigoProcedimientoEmergencia" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:Extension -->
+			<element name="Extension" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<!--TransactionConditionsType - CondicionesTransaccionType -->
+	<complexType name="TipoCondicionesTransaccion">
+		<sequence>
+			<!--cbc:ID -->
+			<element name="ID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:ActionCode -->
+			<element name="CodigoAccion" type="tns:TipoCodigo" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:Description -->
+			<element name="Descripcion" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!-- DocumentReference -->
+			<element name="DocumentoReferencia" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--CommodityClassificationType - TipoClasificacionMercancia -->
+	<complexType name="TipoClasificacionMercancia">
+		<sequence>
+			<!--cbc:NatureCode -->
+			<element name="CodigoNatural" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:CargoTypeCode -->
+			<element name="TipoCodigoCargo" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:CommodityCode -->
+			<element name="CodigoMercancia" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:ItemClassificationCode -->
+			<element name="CodigoClasificacionArticulo" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--ItemIdentificationType - TipoIdentificacionArticulos -->
+	<complexType name="TipoIdentificacionArticulos">
+		<sequence>
+			<!--cbc:ID -->
+			<element name="Id" type="tns:TipoIdentificador" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!--cbc:ExtendedID -->
+			<element name="IDProrroga" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--PhysicalAttribute -->
+			<element name="AtriburoFisico" type="tns:TipoAtriburoFisico"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--MeasurementDimension -->
+			<element name="DimensionMedida" type="tns:TipoDimension"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--IssuerParty -->
+			<element name="TerceroEmisor" type="tns:TipoTercero"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--DimensionType - TipoDimension -->
+	<complexType name="TipoDimension">
+		<sequence>
+			<!-- cbc:AttributeID -->
+			<element name="IDAtriburo" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--cbc:Measure -->
+			<element name="Medida" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:Description -->
+			<element name="Descripcion" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+			<!-- cbc:MinimumMeasure -->
+			<element name="MedidaMinima" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--cbc:MaximumMeasure -->
+			<element name="MedidaMaxima" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+
+	<!--PhysicalAttributeType - TipoAtriburoFisico -->
+	<complexType name="TipoAtriburoFisico">
+		<sequence>
+			<!--cbc:AttributeID -->
+			<element name="IDAtriburo" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--cbc:PositionCode -->
+			<element name="CodigoPosision" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:DescriptionCode -->
+			<element name="CodigoDescripcion" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--cbc:Description -->
+			<element name="Descripcion" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--OrderLineReferenceType - ReferenciaLineaPedidoType -->
+	<complexType name="TipoReferenciaLineaPedido">
+		<sequence>
+			<!--LineID -->
+			<element name="IDLinea" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--SalesOrderLineID -->
+			<element name="LineaPedidoVentasID" type="tns:TipoIdentificador"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--UUID -->
+			<element name="UUID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--LineStatusCode -->
+			<element name="CodigoEstadoLinea" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--OrderReference -->
+			<element name="ReferenciaPedido" type="tns:TipoReferenciaPedido"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!-- LineReferenceType - LineaReferenciaType -->
+	<complexType name="TipoLineaReferencia">
+		<sequence>
+			<!--LineID -->
+			<element name="IDLinea" type="tns:TipoIdentificador"
+				minOccurs="1" maxOccurs="1">
+			</element>
+			<!--UUID -->
+			<element name="UUID" type="tns:TipoIdentificador" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--LineStatusCode -->
+			<element name="CodigoEstadoLinea" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--DocumentReference -->
+			<element name="DocumentoReferencia" type="tns:TipoDocumentoReferencia"
+				minOccurs="0" maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--PricingReferenceType - TipoReferenciaPrecios -->
+	<complexType name="TipoReferenciaPrecios">
+		<sequence>
+			<!--OriginalItemLocationQuantity -->
+			<element name="CantidadOriginalUbicacionArticulo" type="tns:TipoUbicacionCantidadArticulo"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!--AlternativeConditionPrice -->
+			<element name="PrecioAlternativoCondicion" type="tns:TipoPrecio"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--ItemLocationQuantityType - TipoUbicacionCantidadArticulo -->
+	<complexType name="TipoUbicacionCantidadArticulo">
+		<sequence>
+			<!--LeadTimeMeasure -->
+			<element name="MedidaPlazoEntrega" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--MinimumQuantity -->
+			<element name="CantidadMinima" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--MaximumQuantity -->
+			<element name="CantidadMaxima" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--HazardousRiskIndicator -->
+			<element name="IndicadorRiesgo" type="boolean" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--TradingRestrictions -->
+			<element name="RestringcionesComerciales" type="tns:TipoTexto"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--ApplicableTerritoryAddress -->
+			<element name="DireccionTerritorioAplicable" type="tns:TipoDireccion"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!-- Price -->
+			<element name="Precio" type="tns:TipoPrecio" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--DeliveryUnit -->
+			<element name="UnidadEntrega" type="tns:TipoUnidadEntrega"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--ApplicableTaxCategory -->
+			<element name="CategoriaImpuestoAplicable" type="tns:TipoCategoriaImpuesto"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!--DeliveryUnitType - TipoUnidadEntrega -->
+	<complexType name="TipoUnidadEntrega">
+		<sequence>
+			<!-- cbc:BatchQuantity -->
+			<element name="CantidadLote" type="decimal" minOccurs="1"
+				maxOccurs="1">
+			</element>
+			<!-- cbc:ConsumerUnitQuantity -->
+			<element name="CantidadUnidadConsumo" type="decimal"
+				minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- cbc:HazardousRiskIndicator -->
+			<element name="IndicadorRiesgo" type="boolean" minOccurs="0"
+				maxOccurs="1">
+			</element>
+		</sequence>
+	</complexType>
+
+	<!-- Extructuras Basicas -->
+	<!-- IdentifierType - TipoIdentificador -->
+	<complexType name="TipoIdentificador">
+		<simpleContent>
+			<extension base="normalizedString">
+				<!--schemeID -->
+				<attribute name="IdEsquema" type="normalizedString" use="optional">
+				</attribute>
+				<!-- schemeName -->
+				<attribute name="NombreEsquema" type="string" use="optional">
+				</attribute>
+				<!-- schemeAgencyID -->
+				<attribute name="AgenciaEsquemaId" type="normalizedString"
+					use="optional">
+				</attribute>
+				<!--schemeAgencyName -->
+				<attribute name="NombreAgenciaEsquema" type="string" use="optional">
+				</attribute>
+				<!--schemeVersionID -->
+				<attribute name="VersionEsquemaId" type="normalizedString"
+					use="optional">
+				</attribute>
+				<!--schemeDataURI -->
+				<attribute name="EsquemaDatosURI" type="string" use="optional">
+				</attribute>
+				<!--schemeURI -->
+				<attribute name="URIEsquema" type="string" use="optional">
+				</attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<!-- TextType - TipoTexto -->
+	<complexType name="TipoTexto">
+		<simpleContent>
+			<extension base="string">
+				<!-- languageID -->
+				<attribute name="IdIdioma" type="language" use="optional">
+				</attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<!-- CodeType - TipoCodigo -->
+	<complexType name="TipoCodigo">
+		<simpleContent>
+			<extension base="normalizedString">
+				<!--listID -->
+				<attribute name="IdLista" type="normalizedString" use="optional">
+				</attribute>
+				<!--listAgencyID -->
+				<attribute name="IdListaAgencia" type="normalizedString"
+					use="optional">
+				</attribute>
+				<!--listAgencyName -->
+				<attribute name="NombreListaAgencia" type="string" use="optional">
+				</attribute>
+				<!--listName -->
+				<attribute name="NombreLista" type="string" use="optional">
+				</attribute>
+				<!--listVersionID -->
+				<attribute name="IdVersionLista" type="normalizedString"
+					use="optional">
+				</attribute>
+				<!-- name -->
+				<attribute name="Nombe" type="string" use="optional">
+				</attribute>
+				<!--languageID -->
+				<attribute name="IdIdioma" type="language" use="optional">
+				</attribute>
+				<!-- listURI -->
+				<attribute name="URILista" type="string" use="optional">
+				</attribute>
+				<!-- listSchemeURI -->
+				<attribute name="URIEsquemaLista" type="string" use="optional">
+				</attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
+
+	<!-- PeriodType - TipoPeriodo -->
+	<complexType name="TipoPeriodo">
+		<sequence>
+			<!-- StartDate -->
+			<element name="FechaInicio" type="date" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- StartTime -->
+			<element name="HoraInicio" type="time" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!-- EndDate -->
+			<element name="FechaFin" type="date" minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- EndTime -->
+			<element name="HoraFin" type="time" minOccurs="0" maxOccurs="1">
+			</element>
+			<!-- DurationMeasure -->
+			<element name="MedidaDuracion" type="decimal" minOccurs="0"
+				maxOccurs="1">
+			</element>
+			<!--DescriptionCode -->
+			<element name="CodigoDescripcion" type="tns:TipoCodigo"
+				minOccurs="0" maxOccurs="unbounded">
+			</element>
+			<!--Description -->
+			<element name="Descripcion" type="tns:TipoTexto" minOccurs="0"
+				maxOccurs="unbounded">
+			</element>
+		</sequence>
+	</complexType>
+</schema>	
